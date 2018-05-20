@@ -12,7 +12,7 @@ EXAMPLE: If 4 is passed in as x, you will add borders to the 4th, 8th, 12th, etc
 
 Confused?! Here's my mentor's original scribble. Should give you an idea of what your spiral should look like.
 
-![image]()
+![image](https://github.com/hunter-atk/number-spiral-geometry-challenge/blob/master/IMG_9240.jpg?raw=true)
 
 If you solve it, feel free to tweak it as you see fit. Add color! Bend the rules! Discover some breakthrough geometric sequence! If you find something cool, please send me a pull request :D
 
