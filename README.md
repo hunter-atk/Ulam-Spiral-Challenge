@@ -2,7 +2,7 @@
 
 A just-for-fun, mathy programming challenge inspired by my mentor's high school geometry scribbles. 
 
-This program will enable you to visualize different geometric patterns in a spiral depending on its numeric inputs.
+This program will enable you to visualize different geometric patterns in a square-shaped spiral depending on its numeric inputs.
 
 This program, which takes an integer x as an input, should draw a spiral of squares containing integers to a canvas. The numbers in your spiral should begin at 1 and increase by the value of x with each consecutive itteration of a square. 
 
