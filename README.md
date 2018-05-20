@@ -2,7 +2,7 @@
 
 A just-for-fun, mathy programming challenge inspired by my mentor's high school geometry scribbles. 
 
-This challenge will enable you to visualize different geometric patterns in a square-shaped spiral depending on its numeric inputs.
+This challenge will enable you to visualize different geometric patterns in an [Ulam_spiral](https://en.wikipedia.org/wiki/Ulam_spiral) depending on its numeric inputs.
 
 Your program should take an integer x as an input and draw a square-shaped spiral of 50x50 pixel squares to a 600x600 pixel canvas. As the squares are drawn to the canvas, they should wrap around each other COUNTER-CLOCKWISE in a shape very similar to that of a spiral ONLY UNTIL the size of the spiral exceeds the size of the canvas.
 
@@ -14,7 +14,13 @@ Confused?! Here's my mentor's original scribble. Should give you an idea of what
 
 ![image](https://github.com/hunter-atk/number-spiral-geometry-challenge/blob/master/IMG_9240.jpg?raw=true)
 
-If you solve it, feel free to tweak it as you see fit. Add color! Bend the rules! Discover some breakthrough geometric sequence! If you find something cool, please send me a pull request :D
+If you solve it, feel free to tweak it as you see fit. Add color! Bend the rules! Use evens! Fibonacci! Digits of pi! Discover some breakthrough geometric sequence! If you find something cool, please send me a pull request :D
+
+## Mentor's Note
+
+If you'd like to see the histroy behind this spiral and some patterns that have been discovered, check out the video below:
+
+[![Patterns in Primes - Numberphile](http://img.youtube.com/vi/iFuR97YcSLM/0.jpg)](http://www.youtube.com/watch?v=iFuR97YcSLM)
 
 ***BONUS: Instead of drawing squares to a canvas, try generating the spiral another way and populate your squares with numbers.
 
