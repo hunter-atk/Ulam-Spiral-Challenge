@@ -1,4 +1,4 @@
-function createNumberSpiral (number){
+function createNumberSpiral (x) {
     //return final result
 }
 
@@ -10,6 +10,6 @@ function createNumberSpiral (number){
 
 
 //helper function to add border to box
-function addBorder(direction){
+let addBorder = (direction) => {
     //Add border to side of new box facing passed-in spiral direction
 }
