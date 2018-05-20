@@ -40,12 +40,15 @@ const directions = {
 
 //create spiral
 (function createNumberSpiral (x) {
-    const color = (((instanceCount-1) / x) == 0) ? 'green' : 'red';
-    c.fill.style = color;
-    c.fillRect(xCoordinate, yCoordinate, 50, 50);
-    evolveScope();
-    instanceCount++;
-    numberCount += x;
+    let runSesh = 0;
+    while(runSesh < 144)
+        const color = (((instanceCount-1) / x) == 0) ? 'green' : 'red';
+        c.fill.style = color;
+        c.fillRect(xCoordinate, yCoordinate, 50, 50);
+        evolveScope();
+        instanceCount++;
+        numberCount += x;
+        runSesh++;
 })()
 
 
