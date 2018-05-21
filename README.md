@@ -20,7 +20,7 @@ If you solve it, feel free to tweak it as you see fit. Add color! Bend the rules
 
 ## BONUS
 
-Instead of drawing squares to a canvas, try generating the spiral another way and populate your squares with numbers.
+Instead of drawing squares to a canvas, try generating the spiral another way and populate your squares with numbers. Also, make your canvas bigger! The bigger the canvas the easier it is to see patterns, in my opinion.
 
 EXAMPLE: The numbers in your spiral could begin with 1 in the first and center-most square, and increase by the value of x with each consecutive itteration of a square. If 4 is passed in as x, for instance, the first and center-most square in the spiral should contain the number 1, the second square should comntain the number 5, 9 in the third, 13 in the fourth, and so on. See if you notice any number patterns in your spiral.
 
