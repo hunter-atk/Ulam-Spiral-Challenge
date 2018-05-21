@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import 'react-grid-layout/css/styles.css'
+import 'react-resizable/css/styles.css'
+
 
 ReactDOM.render(
 	<div>

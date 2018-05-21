@@ -13,10 +13,6 @@ class Canvas extends React.Component {
 			<ThneedContext>
 				{(context) => (
 					<React.Fragment>
-						<p>{context.runSesh}</p>
-                        <button onClick={() => {
-							context.spiralInit()
-						}}>Click away</button>
 					</React.Fragment>
 				)}
 			</ThneedContext>
