@@ -22,26 +22,26 @@ let xCoordinate = 300;
 let yCoordinate = 300;
 
 let directionCount = 1;
-const directions = {
-    1: function () => {
+const directions = [
+    () => {
         return xCoordinate += 50;
     },
-    2: function () => {
+    () => {
         return yCoordinate += 50;
     },
-    3: function () => {
+    () => {
         return xCoordinate -= 50;
     },
-    4: function () => {
+    () => {
         return yCoordinate -= 50;
-    }
-}
+    },
+]
 
 
 //create spiral
-(function createNumberSpiral (x) {
+const spiralInit = (x) => {
     let runSesh = 0;
-    while(runSesh < 144)
+    while(runSesh < 144) {
         const color = (((instanceCount-1) / x) == 0) ? 'green' : 'red';
         c.fill.style = color;
         c.fillRect(xCoordinate, yCoordinate, 50, 50);
@@ -49,7 +49,8 @@ const directions = {
         instanceCount++;
         numberCount += x;
         runSesh++;
-})()
+    }
+}
 
 
 //helper function to identify spiral 'scope'
@@ -74,19 +75,20 @@ function evolveScope(){
 //helper function to change coordinates WITHOUT changing direction
 function changeCoordinates (){
     switch(directionCount) {
-        case 1:
+        case 0:
             xCoordinate += 50;
             break;
-        case 2:
+        case 1:
             yCoordinate += 50;
             break;
-        case 3:
+        case 2:
             xCoordinate -= 50;
             break;
-        case 4:
+        case 3:
             yCoordinate -= 50;
+            break;
         default:
-            console.log(err);
+            console.log("err");
     }
 }
 
@@ -96,14 +98,11 @@ function changeDirection () {
     if(instanceCount > 1){
         directionCount++;
     }
-    if(directionCount > 4){
+    if(directionCount >= 4){
         directionCount = 1;
     }
-    return directions.directionCount();
+    return directions.directionCount;
 }
 
 
-//helper function to add border to box
-let addBorder = (direction) => {
-    //Add border to side of new box facing passed-in spiral direction
-}
+spiralInit();
