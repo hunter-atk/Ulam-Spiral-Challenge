@@ -1,4 +1,4 @@
-### Create an Ulam spiral
+# Create an Ulam spiral
 
 ## Challenge Description
 
