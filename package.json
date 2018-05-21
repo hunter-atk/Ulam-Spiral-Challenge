@@ -1,0 +1,34 @@
+{
+  "name": "ulam-spiral-challenge",
+  "version": "0.0.1",
+  "description": "Enable you to visualize different geometric patterns in an Ulam_spiral depending on its numeric inputs.",
+  "main": "server.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hunter-atk/Ulam-Spiral-Challenge.git"
+  },
+  "keywords": [
+    "ulam-spiral",
+    "math",
+    "prime",
+    "javascript",
+    "patterns"
+  ],
+  "author": "Hunter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hunter-atk/Ulam-Spiral-Challenge/issues"
+  },
+  "homepage": "https://github.com/hunter-atk/Ulam-Spiral-Challenge#readme",
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "semantic-ui-react": "^0.78.3"
+  }
+}
