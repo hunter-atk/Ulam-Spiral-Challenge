@@ -1,10 +1,10 @@
 # Create an Ulam spiral
 
-## Challenge Description
-
 A just-for-fun, mathy programming challenge inspired by my mentor's high school geometry scribbles. 
 
 This challenge will enable you to visualize different geometric patterns in an [Ulam_spiral](https://en.wikipedia.org/wiki/Ulam_spiral) depending on its numeric inputs.
+
+## Instructions
 
 Your program should take an integer x as an input and draw a square-shaped spiral of 50x50 pixel squares to a 600x600 pixel canvas. As the squares are drawn to the canvas, they should wrap around each other COUNTER-CLOCKWISE in a shape very similar to that of a spiral ONLY UNTIL the size of the spiral exceeds the size of the canvas.
 
