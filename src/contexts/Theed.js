@@ -6,15 +6,14 @@ class ThneedProvider extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			initCanvas: () =>  {
-				console.log(document.querySelector('canvas'))
-				return document.querySelector('canvas')
-			},
-			width: 600, 
+			initCanvas: () => {},
+			c: document.querySelector('canvas'),
+			width: 600,
 			height: 600,
 			numberCount: 1,
 			instanceCount: 1,
 			round: 0,
+			runSesh: 0,
 			waitTime: 1,
 			waitCount: 0,
 			xCoordinate: 300,
@@ -24,51 +23,99 @@ class ThneedProvider extends Component {
 				() => this.setState({ yCoordinate: this.state.yCoordinate + 50 }),
 				() => this.setState({ xCoordinate: this.state.xCoordinate + 50 }),
 				() => this.setState({ yCoordinate: this.state.yCoordinate - 50 }),
-				() => this.setState({ xCoordinate: this.state.xCoordinate - 50 }),
+				() => this.setState({ xCoordinate: this.state.xCoordinate - 50 })
 			],
 			spiralInit: (x) => {
-				let runSesh = 0;
-				while(runSesh < 144) {
-					console.log(runSesh)
-					const color = (((this.state.nstanceCount-1) / x) === 0) ? 'green' : 'red';
-					this.state.canvas.fill.style = color;
-					this.state.canvas.font = "10px Arial";
-					this.state.canvas.fillText(`{
-						left: ${this.state.xCoordinate}, 
-						top: ${this.state.yCoordinate},
-						sesh: ${runSesh},
-					}`, this.state.yCoordinate, this.state.xCoordinate);
-
-					// c.fillRect(xCoordinate, yCoordinate, 50, 50);
-					this.state.evolveScope();
+				window.setInterval(() => {
+					this.setState({ runSesh: this.state.runSesh + 1 });
+					const color = (this.state.instanceCount - 1) / x === 0 ? 'green' : 'red';
 					this.setState({
-						instanceCount: this.state.instanceCount+1,
-						numberCount: this.state.numberCount + x,
-						runSesh: runSesh+1,
+						canvas: {
+							fill: {
+								style: color
+							}
+						}
 					});
-				}
+
+					this.setState({
+						canvas: {
+							font: '10px Arial'
+						}
+					});
+					if (this.state.c) {
+						document.querySelector('canvas').fillText(
+							`{
+								left: ${this.state.xCoordinate}, 
+								top: ${this.state.yCoordinate},
+								sesh: ${this.state.runSesh},
+							}`,
+							this.state.yCoordinate,
+							this.state.xCoordinate
+						);
+
+						this.state.c.fillRect(this.state.xCoordinate, this.state.yCoordinate, 50, 50);
+						this.state.evolveScope();
+						this.setState({
+							instanceCount: this.state.instanceCount + 1,
+							numberCount: this.state.numberCount + x,
+							runSesh: this.state.runSesh + 1
+						});
+					}
+				}, 1000);
+
+				// while(this.state.runSesh < 144) {
+				// 	const color = (((this.state.nstanceCount-1) / x) === 0) ? 'green' : 'red';
+				// 	this.setState({
+				// 		canvas: {
+				// 			fill: {
+				// 				style: color,
+				// 			}
+				// 		}
+				// 	})
+				// 	this.setState({
+				// 		canvas: {
+				// 			font: "10px Arial"
+				// 		}
+				// 	})
+				// 	if(this.state.c) {
+				// 		document.querySelector('canvas').fillText(`{
+				// 			left: ${this.state.xCoordinate},
+				// 			top: ${this.state.yCoordinate},
+				// 			sesh: ${this.state.runSesh},
+				// 		}`, this.state.yCoordinate, this.state.xCoordinate);
+
+				// 		// c.fillRect(xCoordinate, yCoordinate, 50, 50);
+				// 		this.state.evolveScope();
+				// 		this.setState({
+				// 			instanceCount: this.state.instanceCount+1,
+				// 			numberCount: this.state.numberCount + x,
+				// 			runSesh: this.state.runSesh+1,
+				// 		});
+
+				// 	}
+				// }
 			},
 			evolveScope: () => {
-				if (this.state.instanceCount === 1){
-					return this.state.changeDirection()
+				if (this.state.instanceCount === 1) {
+					return this.state.changeDirection();
 				}
 				this.setState({ waitCount: this.state.waitCount + 1 });
 				if (this.state.waitCount === this.state.waitTime) {
-					this.setState({ round: this.state.round + 1 })
-					this.setState({ waitCount: 0})
-					this.state.changeDirection()
+					this.setState({ round: this.state.round + 1 });
+					this.setState({ waitCount: 0 });
+					this.state.changeDirection();
 				} else {
 					this.state.changeCoordinates();
 				}
-				if (this.state.round === 2){
-					this.setState({ round: 0 })
-					this.state({ waitTime: this.state.waitTime + 1})
+				if (this.state.round === 2) {
+					this.setState({ round: 0 });
+					this.state({ waitTime: this.state.waitTime + 1 });
 				}
 			},
 			changeCoordinates: () => {
-				switch(this.state.directionCount) {
+				switch (this.state.directionCount) {
 					case 0:
-						this.setState({xCoordinate: this.state.xCoordinate + 50});
+						this.setState({ xCoordinate: this.state.xCoordinate + 50 });
 						break;
 					case 1:
 						this.setState({ yCoordinate: this.state.yCoordinate + 50 });
@@ -80,19 +127,19 @@ class ThneedProvider extends Component {
 						this.setState({ yCoordinate: this.state.yCoordinate - 50 });
 						break;
 					default:
-						console.log("err");
+						console.log('err');
 				}
 			},
-			changeDirection: () =>  {
-			if(this.state.instanceCount > 1){
-				this.state.directionCount++;
-			}
-			if(this.state.directionCount >= 4){
-				this.state.directionCount = 1;
-			}
+			changeDirection: () => {
+				if (this.state.instanceCount > 1) {
+					this.state.directionCount++;
+				}
+				if (this.state.directionCount >= 4) {
+					this.state.directionCount = 1;
+				}
 				return this.state.directions.directionCount;
-			}		
-		}
+			}
+		};
 	}
 
 	render() {

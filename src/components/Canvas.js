@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThneedContext } from '../contexts/Theed';
-import { Json } from './Json';
+import { ShowJson } from './ShowJson';
 
 class Canvas extends React.Component {
 	constructor(props) {
@@ -13,7 +13,11 @@ class Canvas extends React.Component {
 			<ThneedContext>
 				{(context) => (
 					<React.Fragment>
-						<Json data={context} />
+						<p>{context.runSesh}</p>
+						<ShowJson data={context} />
+                        <button onClick={() => {
+							context.spiralInit()
+						}}>Click away</button>
 					</React.Fragment>
 				)}
 			</ThneedContext>
