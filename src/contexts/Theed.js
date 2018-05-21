@@ -43,6 +43,9 @@ class ThneedProvider extends Component {
 						}
 					});
 					if (this.state.c) {
+						console.console.log('====================================');
+						console.log("here");
+						console.log('====================================');
 						document.querySelector('canvas').fillText(
 							`{
 								left: ${this.state.xCoordinate}, 
