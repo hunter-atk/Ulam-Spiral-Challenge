@@ -24,16 +24,16 @@ let yCoordinate = 300;
 let directionCount = 1;
 const directions = [
     () => {
-        return xCoordinate += 50;
-    },
-    () => {
         return yCoordinate += 50;
     },
     () => {
-        return xCoordinate -= 50;
+        return xCoordinate += 50;
     },
     () => {
         return yCoordinate -= 50;
+    },
+    () => {
+        return xCoordinate -= 50;
     },
 ]
 
@@ -44,7 +44,14 @@ const spiralInit = (x) => {
     while(runSesh < 144) {
         const color = (((instanceCount-1) / x) == 0) ? 'green' : 'red';
         c.fill.style = color;
-        c.fillRect(xCoordinate, yCoordinate, 50, 50);
+        c.font = "10px Arial";
+        c.fillText(`{
+            left: ${xCoordinate}, 
+            top: ${yCoordinate},
+            sesh: ${runSesh},
+        }`, yCoordinate, xCoordinate);
+
+        // c.fillRect(xCoordinate, yCoordinate, 50, 50);
         evolveScope();
         instanceCount++;
         numberCount += x;
