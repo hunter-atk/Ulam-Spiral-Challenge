@@ -6,8 +6,13 @@ class ThneedProvider extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			initCanvas: () => {},
-			c: document.querySelector('canvas'),
+			initCanvas: () => {
+				this.setState({
+					c: document.querySelector('canvas').getContext('2d'),
+ 				})
+			},
+			canvas: document.querySelector('canvas'),
+			c:{},
 			width: 600,
 			height: 600,
 			numberCount: 1,
@@ -42,11 +47,8 @@ class ThneedProvider extends Component {
 							font: '10px Arial'
 						}
 					});
-					if (this.state.c) {
-						console.console.log('====================================');
-						console.log("here");
-						console.log('====================================');
-						document.querySelector('canvas').fillText(
+						// this.setState({ c: document.querySelector('canvas') })
+						document.querySelector('canvas').getContext('2d').fillText(
 							`{
 								left: ${this.state.xCoordinate}, 
 								top: ${this.state.yCoordinate},
@@ -56,14 +58,13 @@ class ThneedProvider extends Component {
 							this.state.xCoordinate
 						);
 
-						this.state.c.fillRect(this.state.xCoordinate, this.state.yCoordinate, 50, 50);
+						document.querySelector('canvas').getContext('2d').fillRect(this.state.xCoordinate, this.state.yCoordinate, 50, 50);
 						this.state.evolveScope();
 						this.setState({
 							instanceCount: this.state.instanceCount + 1,
 							numberCount: this.state.numberCount + x,
 							runSesh: this.state.runSesh + 1
 						});
-					}
 				}, 1000);
 
 				// while(this.state.runSesh < 144) {
@@ -112,7 +113,7 @@ class ThneedProvider extends Component {
 				}
 				if (this.state.round === 2) {
 					this.setState({ round: 0 });
-					this.state({ waitTime: this.state.waitTime + 1 });
+					this.setState({ waitTime: this.state.waitTime + 1 });
 				}
 			},
 			changeCoordinates: () => {

@@ -14,7 +14,6 @@ class Canvas extends React.Component {
 				{(context) => (
 					<React.Fragment>
 						<p>{context.runSesh}</p>
-						<ShowJson data={context} />
                         <button onClick={() => {
 							context.spiralInit()
 						}}>Click away</button>
