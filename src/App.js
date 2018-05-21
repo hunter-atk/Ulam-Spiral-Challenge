@@ -4,6 +4,9 @@ import { ThneedProvider } from './contexts/Theed';
 
 const App = () => (
   <ThneedProvider>
+    <h2>here</h2>
+    <canvas></canvas>
+
     <Canvas />
   </ThneedProvider>
 );

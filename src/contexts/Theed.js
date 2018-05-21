@@ -6,8 +6,11 @@ class ThneedProvider extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			initCanvas: () =>  document.querySelector('canvas'),
-			width: 600,
+			initCanvas: () =>  {
+				console.log(document.querySelector('canvas'))
+				return document.querySelector('canvas')
+			},
+			width: 600, 
 			height: 600,
 			numberCount: 1,
 			instanceCount: 1,
@@ -26,6 +29,7 @@ class ThneedProvider extends Component {
 			spiralInit: (x) => {
 				let runSesh = 0;
 				while(runSesh < 144) {
+					console.log(runSesh)
 					const color = (((this.state.nstanceCount-1) / x) === 0) ? 'green' : 'red';
 					this.state.canvas.fill.style = color;
 					this.state.canvas.font = "10px Arial";
