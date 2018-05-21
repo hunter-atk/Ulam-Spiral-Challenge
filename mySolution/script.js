@@ -11,8 +11,8 @@ const c = canvas.getContext('2d');
 
 
 //declare global variables
-let numberCount = 1;
 let instanceCount = 1;
+// let numberCount = 1;
 
 let round = 0;
 let waitTime = 1;
@@ -23,33 +23,34 @@ let yCoordinate = 300;
 
 let directionCount = 1;
 const directions = {
-    1: function () => {
+    1: () => {
         return xCoordinate += 50;
     },
-    2: function () => {
+    2: () => {
         return yCoordinate += 50;
     },
-    3: function () => {
+    3: () => {
         return xCoordinate -= 50;
     },
-    4: function () => {
+    4: () => {
         return yCoordinate -= 50;
     }
 }
 
 
 //create spiral
-(function createNumberSpiral (x) {
+function createNumberSpiral (x) {
     let runSesh = 0;
-    while(runSesh < 144)
-        const color = (((instanceCount-1) / x) == 0) ? 'green' : 'red';
+    while(runSesh < 144){
+        let color = (((instanceCount-1) / x) == 0) ? 'green' : 'red';
         c.fill.style = color;
         c.fillRect(xCoordinate, yCoordinate, 50, 50);
         evolveScope();
         instanceCount++;
-        numberCount += x;
+        // numberCount += x;
         runSesh++;
-})()
+    }
+}
 
 
 //helper function to identify spiral 'scope'
@@ -85,8 +86,6 @@ function changeCoordinates (){
             break;
         case 4:
             yCoordinate -= 50;
-        default:
-            console.log(err);
     }
 }
 
@@ -99,7 +98,7 @@ function changeDirection () {
     if(directionCount > 4){
         directionCount = 1;
     }
-    return directions.directionCount();
+    return directions.directionCount;
 }
 
 
@@ -107,3 +106,5 @@ function changeDirection () {
 let addBorder = (direction) => {
     //Add border to side of new box facing passed-in spiral direction
 }
+
+createNumberSpiral(4);
