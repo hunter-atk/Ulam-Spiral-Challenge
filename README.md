@@ -1,4 +1,6 @@
-# Challenge Description
+### Create an Ulam spiral
+
+## Challenge Description
 
 A just-for-fun, mathy programming challenge inspired by my mentor's high school geometry scribbles. 
 
@@ -22,7 +24,9 @@ If you'd like to see the histroy behind this spiral and some patterns that have 
 
 [![Patterns in Primes - Numberphile](http://img.youtube.com/vi/iFuR97YcSLM/0.jpg)](http://www.youtube.com/watch?v=iFuR97YcSLM)
 
-***BONUS: Instead of drawing squares to a canvas, try generating the spiral another way and populate your squares with numbers.
+## BONUS
 
-***EXAMPLE: The numbers in your spiral could begin with 1 in the first and center-most square, and increase by the value of x with each consecutive itteration of a square. If 4 is passed in as x, for instance, the first and center-most square in the spiral should contain the number 1, the second square should comntain the number 5, 9 in the third, 13 in the fourth, and so on. See if you notice any number patterns in your spiral.
+Instead of drawing squares to a canvas, try generating the spiral another way and populate your squares with numbers.
+
+EXAMPLE: The numbers in your spiral could begin with 1 in the first and center-most square, and increase by the value of x with each consecutive itteration of a square. If 4 is passed in as x, for instance, the first and center-most square in the spiral should contain the number 1, the second square should comntain the number 5, 9 in the third, 13 in the fourth, and so on. See if you notice any number patterns in your spiral.
 
