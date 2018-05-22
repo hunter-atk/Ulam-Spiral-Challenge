@@ -1,18 +1,13 @@
 import React from 'react';
-import { Canvas } from './components/Canvas'
+
+import { Container, Col, Row } from 'react-grid-system'
+
 import { ThneedProvider } from './contexts/Theed'
-import { Dashboard } from './components/Dashboard'
-import { Header, Icon, Image } from 'semantic-ui-react'
 
 const App = () => (
   <ThneedProvider>
-    <Dashboard />
-    {/* <canvas></canvas>
-    <Canvas />
-    <ConsoleUI /> */}
-
+    <p>in app</p>
   </ThneedProvider>
 );
-
 
 export default App;
